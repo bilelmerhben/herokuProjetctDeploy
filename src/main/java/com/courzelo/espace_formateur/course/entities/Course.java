@@ -8,9 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.courzelo.espace_formateur.course.models.Chapter;
-import com.courzelo.espace_formateur.course.models.Conclusion;
-import com.courzelo.espace_formateur.course.models.Introduction;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -44,12 +41,6 @@ public class Course {
     
     @Field(value="Introduction")
     private List<List<MultipartFile>> introduction;
-    
-    /*@Field(value="Chapters")
-    private List<Chapter> chapters;
-    
-    @Field(value="Conclusion")
-    private Conclusion conclusion;*/
     
 	public static String getSequenceName() {
 		return SEQUENCE_NAME;
