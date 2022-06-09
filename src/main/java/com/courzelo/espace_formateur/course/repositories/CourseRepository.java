@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.courzelo.espace_formateur.course.entities.Course;
 
 @Repository
-public interface CourseRepository extends MongoRepository<Course, Long> {
-	public Course findByIdCourse(long idCourse);
+public interface CourseRepository extends MongoRepository<Course, String> {
+	
 }

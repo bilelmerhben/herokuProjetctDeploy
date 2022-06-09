@@ -1,12 +1,10 @@
 package com.courzelo.espace_formateur.course.entities;
 
-import java.io.InputStream;
+
 import java.util.List;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,35 +14,75 @@ import lombok.Setter;
 @Setter
 public class Course {
 	
-	@Transient
-    public static final String SEQUENCE_NAME = "courses_sequence";
+	
 
 	@Id
-	private long idCourse;
+	private String id;
+	
+	@Field(value = "User")
+	private long idUser;
 	
 	@Field(value = "Title")
     private String title;
-
-    @Field(value = "Price")
-    private float price;
-    @Field(value = "Auteur")
-    private String auteur;
-    
-    @Field(value = "Description")
-    private String courseDescription;
-    
-    @Field(value = "Test")
-    private InputStream test;
-    
-    @Field(value = "TitleStream")
-    private String titleStrem;
+	
+	@Field(value = "Language")
+	private String language;
+	
+	@Field(value = "Category")
+	private String category;  
+	
+	@Field(value = "Outcomes")
+	private List<String> outcomes;
+	
+	@Field(value = "ShortDescription")
+	private String description;
+	
+	@Field(value = "Details")
+	private String details;
+	
+	@Field(value = "Skills_Required")
+	private List<String> skillsRequired;
     
     @Field(value="Introduction")
-    private List<List<MultipartFile>> introduction;
+    private ExtremCourse introduction;
     
-	public static String getSequenceName() {
-		return SEQUENCE_NAME;
-	}
-  
+    @Field(value="Sections")
+    private List<ExtremCourse> sections;
+    
+    @Field(value="Customer Sections")
+    private List<CustomerExtremCourse> customerSections;
+    
+    @Field(value="Conclusion")
+    private ExtremCourse conclusion;
+    
+    @Field(value = "Audience")
+	private String audience;
+    
+    @Field(value = "Pre-Requisites")
+	private List<String> preRequisites;
+    
+    @Field(value = "InstructorInfo")
+	private String instructorInfo;
+    
+    @Field(value = "Image")
+	private String courseImage;
+    
+    @Field(value = "Video")
+	private String courseVideo;
+    
+    @Field(value = "Price")
+	private float price;
+    
+    @Field(value = "Progress")
+	private int progress;
+    
+    @Field(value = "Status")
+	private String status;
+    
+    @Field(value = "Sections quizzs")
+    private List<String> listQuizzs;
+    
+    @Field(value = "Evaluation Quizz")
+	private String finalQuizz;
    
 }
