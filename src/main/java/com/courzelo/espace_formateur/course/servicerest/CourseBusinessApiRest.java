@@ -26,7 +26,7 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 	    
 	    @Autowired
 	    RestTemplateBuilder restTemplateBuilder;
-	    private static final String GET_USER_BY_ID_API = "http://localhost:8087/api/auth/getUser/{id}";
+	    private static final String GET_USER_BY_ID_API = "https://auth-herokuu.herokuapp.com/api/auth/getUser/{id}";
 	    
 	    public User getUserByRestTemplate(long id){
 			Map<String, Long> param = new HashMap<>();
