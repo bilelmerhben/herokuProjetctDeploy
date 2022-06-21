@@ -83,4 +83,6 @@ public class Course {
     @Field(value = "Global Quizz")
 	private String globalQuizzId;
    
+    @Field(value = "Required Score")
+   	private int score;
 }

@@ -33,5 +33,6 @@ public class CourseDTO {
 	private int progress;
 	private String status;
 	private String globalQuizzId;
+	private int score;
 	
 }
