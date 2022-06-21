@@ -20,7 +20,7 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 	
 	    @Autowired
 		private CourseRepository reposCourse;
-	    
+	  
 	    @Autowired
 	    private ModelMapper mapper;
 	    
@@ -136,22 +136,7 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			
 		}
 		
-		@Override
-		public CourseDTO addCourseWithQuizz(String courseId, String quizzId) {
-            
-			 Course course = reposCourse.findById(courseId).orElseGet(Course::new);
-        	if(course.getListQuizzs()==null) {
-        		course.setListQuizzs((new ArrayList<String>()));
-        		
-        	}
-        	
-        	List<String> quizzSectionsIds =course.getListQuizzs();
-        	quizzSectionsIds.add(quizzId);
-        	course.setListQuizzs(quizzSectionsIds);
-        	Course newCourse = reposCourse.save(course);
-        	return mapper.map(newCourse, CourseDTO.class);
-       
-        }
+	
 		
 		
 

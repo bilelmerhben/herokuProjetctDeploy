@@ -9,6 +9,5 @@ public interface IServiceCourse {
 	public CourseDTO getCourseById(String  idCourse); 
 	public CourseDTO putCourseById(String  idCourse , CourseDTO requestCourse); 
 	public void deleteCourse(String  idCourse);
-	public CourseDTO addCourseWithQuizz(String courseId,String quizzId);
 	public CourseDTO addFinalQuizz(String courseId,String quizzId);
 }

@@ -44,7 +44,7 @@ public class Course {
 	private List<String> skillsRequired;
     
     @Field(value="Introduction")
-    private ExtremCourse introduction;
+    private intrConcluExtremCourse introduction;
     
     @Field(value="Sections")
     private List<ExtremCourse> sections;
@@ -53,7 +53,7 @@ public class Course {
     private List<CustomerExtremCourse> customerSections;
     
     @Field(value="Conclusion")
-    private ExtremCourse conclusion;
+    private intrConcluExtremCourse conclusion;
     
     @Field(value = "Audience")
 	private String audience;
@@ -79,8 +79,6 @@ public class Course {
     @Field(value = "Status")
 	private String status;
     
-    @Field(value = "Sections quizzs")
-    private List<String> listQuizzs;
     
     @Field(value = "Evaluation Quizz")
 	private String finalQuizz;

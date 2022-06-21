@@ -3,7 +3,7 @@ package com.courzelo.espace_formateur.course.entities.dtos;
 import java.util.List;
 import com.courzelo.espace_formateur.course.entities.CustomerExtremCourse;
 import com.courzelo.espace_formateur.course.entities.ExtremCourse;
-
+import com.courzelo.espace_formateur.course.entities.intrConcluExtremCourse;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +20,10 @@ public class CourseDTO {
 	private String description;
 	private String details;
 	private List<String> skillsRequired;
-    private ExtremCourse introduction;
+    private intrConcluExtremCourse introduction;
     private List<ExtremCourse> sections;
     private List<CustomerExtremCourse> customerSections;
-    private ExtremCourse conclusion;
+    private intrConcluExtremCourse conclusion;
 	private String audience;
 	private List<String> preRequisites;
 	private String instructorInfo;
@@ -32,7 +32,6 @@ public class CourseDTO {
 	private float price;
 	private int progress;
 	private String status;
-	private List<String> listQuizzs;
 	private String finalQuizz;
 	
 }

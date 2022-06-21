@@ -6,8 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-public class ExtremCourse {
+public class intrConcluExtremCourse {
 	 private String name;
 	 private List<KolbPhase> phases;
-	 private String quizzId;
 }

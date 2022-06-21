@@ -26,14 +26,13 @@ public class CourseRest {
     public CourseDTO addCourse(@RequestBody @Valid  CourseDTO courseDTO ,@PathVariable("idUser") Long idUser) {
         return iCourse.addCourse(courseDTO,idUser);
     }
-	@PutMapping(path = "/addCourseListQuizz/{courseId}/{quizzId}")
-    public CourseDTO addCourseListQuizz(@PathVariable(name = "courseId") @Valid  String courseId, @PathVariable(name = "quizzId") String quizzId)  {
-        return iCourse.addCourseWithQuizz(courseId, quizzId);
-    }
-	@PutMapping(path = "/addCourseFinalQuizz/{courseId}/{quizzId}")
+	
+	/*
+	 @PutMapping(path = "/addCourseFinalQuizz/{courseId}/{quizzId}")
     public CourseDTO addCourseFinalQuizz(@PathVariable(name = "courseId") @Valid  String courseId, @PathVariable(name = "quizzId") String quizzId)  {
         return iCourse.addFinalQuizz(courseId, quizzId);
     }
+    */
 	@GetMapping(path = "/getAllCourses")
 	public List<CourseDTO> getAllCourses() {
 		return iCourse.getAllCourses(); 
