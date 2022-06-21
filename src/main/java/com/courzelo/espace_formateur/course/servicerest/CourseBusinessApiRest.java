@@ -1,6 +1,5 @@
 package com.courzelo.espace_formateur.course.servicerest;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,9 +34,8 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 	}
 	   
 		@Override
-		public CourseDTO addCourse(CourseDTO courseDTO,Long idUser){
+		public CourseDTO addCourse(CourseDTO courseDTO){
 			Course course = mapper.map(courseDTO, Course.class);
-			course.setIdUser(idUser);
 			Course newcourse=reposCourse.save(course);	
 			return mapper.map(newcourse,CourseDTO.class);
 		}
@@ -126,15 +124,7 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			reposCourse.delete(course);
 		}
 	
-		@Override
-		public CourseDTO addFinalQuizz(String courseId, String quizzId) {
-			
-			 Course course = reposCourse.findById(courseId).orElseGet(Course::new);
-			 course.setFinalQuizz(quizzId);
-				Course newCourse = reposCourse.save(course);
-	        	return mapper.map(newCourse, CourseDTO.class);
-			
-		}
+		
 		
 	
 		

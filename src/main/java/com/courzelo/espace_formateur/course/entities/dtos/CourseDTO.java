@@ -32,6 +32,6 @@ public class CourseDTO {
 	private float price;
 	private int progress;
 	private String status;
-	private String finalQuizz;
+	private String globalQuizzId;
 	
 }

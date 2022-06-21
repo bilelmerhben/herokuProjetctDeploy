@@ -80,7 +80,7 @@ public class Course {
 	private String status;
     
     
-    @Field(value = "Evaluation Quizz")
-	private String finalQuizz;
+    @Field(value = "Global Quizz")
+	private String globalQuizzId;
    
 }

@@ -22,17 +22,12 @@ public class CourseRest {
 	@Autowired
 	private IServiceCourse iCourse;
 
-	@PostMapping(path = "/addCourse/{idUser}")
-    public CourseDTO addCourse(@RequestBody @Valid  CourseDTO courseDTO ,@PathVariable("idUser") Long idUser) {
-        return iCourse.addCourse(courseDTO,idUser);
+	@PostMapping(path = "/addCourse")
+    public CourseDTO addCourse(@RequestBody @Valid  CourseDTO courseDTO) {
+        return iCourse.addCourse(courseDTO);
     }
 	
-	/*
-	 @PutMapping(path = "/addCourseFinalQuizz/{courseId}/{quizzId}")
-    public CourseDTO addCourseFinalQuizz(@PathVariable(name = "courseId") @Valid  String courseId, @PathVariable(name = "quizzId") String quizzId)  {
-        return iCourse.addFinalQuizz(courseId, quizzId);
-    }
-    */
+	
 	@GetMapping(path = "/getAllCourses")
 	public List<CourseDTO> getAllCourses() {
 		return iCourse.getAllCourses(); 
