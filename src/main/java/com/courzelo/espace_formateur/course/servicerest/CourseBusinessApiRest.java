@@ -10,6 +10,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import com.courzelo.espace_formateur.course.entities.Course;
 import com.courzelo.espace_formateur.course.entities.User;
+import com.courzelo.espace_formateur.course.entities.intrConcluExtremCourse;
 import com.courzelo.espace_formateur.course.entities.dtos.CourseDTO;
 import com.courzelo.espace_formateur.course.iservicerest.IServiceCourse;
 import com.courzelo.espace_formateur.course.repositories.CourseRepository;
@@ -78,18 +79,28 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			
 			if(courseDTO.getSkillsRequired()!= null)
 			thecourse.setSkillsRequired(course.getSkillsRequired());
+			//introduction part
+			intrConcluExtremCourse intro=new intrConcluExtremCourse();
+			if(courseDTO.getIntroduction().getName()!= null)
+				intro.setName(courseDTO.getIntroduction().getName());
+			if(courseDTO.getIntroduction().getPhases()!= null)
+			intro.setPhases(courseDTO.getIntroduction().getPhases());
 			
-			if(courseDTO.getIntroduction()!= null)
-				thecourse.setIntroduction(course.getIntroduction());
-			
+				thecourse.setIntroduction(intro);
+			//section part
 			if(courseDTO.getSections()!= null)
 				thecourse.setSections(course.getSections());
 			
 			if(courseDTO.getCustomerSections()!= null)
 				thecourse.setCustomerSections(course.getCustomerSections());
+			//conclusion part
+			intrConcluExtremCourse conclu=new intrConcluExtremCourse();
+			if(courseDTO.getConclusion().getName()!= null)
+				conclu.setName(courseDTO.getConclusion().getName());
+			if(courseDTO.getConclusion().getPhases()!= null)
+				conclu.setPhases(courseDTO.getConclusion().getPhases());
 			
-			if(courseDTO.getConclusion()!= null)
-				thecourse.setConclusion(course.getConclusion());
+				thecourse.setConclusion(conclu);
 			
 			if(courseDTO.getAudience()!= null)
 				thecourse.setAudience(course.getAudience());
