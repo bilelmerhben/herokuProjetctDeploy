@@ -34,5 +34,6 @@ public class CourseDTO {
 	private String status;
 	private String globalQuizzId;
 	private int score;
+	private boolean type;
 	
 }

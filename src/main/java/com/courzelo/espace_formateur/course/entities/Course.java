@@ -85,4 +85,7 @@ public class Course {
    
     @Field(value = "Required Score")
    	private int score;
+    
+    @Field(value = "With methodologie type")
+   	private boolean type;
 }
