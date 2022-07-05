@@ -57,25 +57,64 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 		public CourseDTO putCourseById(String  idCourse, CourseDTO courseDTO) {
 	       Course course = mapper.map(courseDTO, Course.class);
 	       Course thecourse = reposCourse.findById(idCourse).orElseGet(Course::new);
+			if(courseDTO.getTitle()!= null)
 				thecourse.setTitle(course.getTitle());
+			
+			if(courseDTO.getLanguage()!= null)
 				thecourse.setLanguage(course.getLanguage());
+			
+			if(courseDTO.getCategory()!= null)
 				thecourse.setCategory(course.getCategory());
+			
+			if(courseDTO.getOutcomes()!= null)
 				thecourse.setOutcomes(course.getOutcomes());
+			
+			if(courseDTO.getDescription()!= null)
 				thecourse.setDescription(course.getDescription());
+			
+			
+			if(courseDTO.getDetails()!= null)
 				thecourse.setDetails(course.getDetails());
-			    thecourse.setSkillsRequired(course.getSkillsRequired());
+			
+			if(courseDTO.getSkillsRequired()!= null)
+			thecourse.setSkillsRequired(course.getSkillsRequired());
+			
+			if(courseDTO.getIntroduction()!= null)
 				thecourse.setIntroduction(course.getIntroduction());
+			
+			if(courseDTO.getSections()!= null)
 				thecourse.setSections(course.getSections());
+			
+			if(courseDTO.getCustomerSections()!= null)
 				thecourse.setCustomerSections(course.getCustomerSections());
+			
+			if(courseDTO.getConclusion()!= null)
 				thecourse.setConclusion(course.getConclusion());
+			
+			if(courseDTO.getAudience()!= null)
 				thecourse.setAudience(course.getAudience());
+			
+			if(courseDTO.getPreRequisites()!= null)
 				thecourse.setPreRequisites(course.getPreRequisites());
+			
+			if(courseDTO.getInstructorInfo()!= null)
 				thecourse.setInstructorInfo(course.getInstructorInfo());
+			
+			if(courseDTO.getCourseImage()!= null)
 				thecourse.setCourseImage(course.getCourseImage());
+			
+			if(courseDTO.getCourseVideo()!= null)
 				thecourse.setCourseVideo(course.getCourseVideo());
+			
+			if(courseDTO.getPrice() != 0)
 				thecourse.setPrice(course.getPrice());
+			
+			if(courseDTO.getProgress()!= 0)
 				thecourse.setProgress(course.getProgress());
+			
+			if(courseDTO.getStatus()!= null)
 				thecourse.setStatus(course.getStatus());
+			
 			Course newCourse = reposCourse.save(thecourse);
 			return  mapper.map(newCourse, CourseDTO.class);
 		}
