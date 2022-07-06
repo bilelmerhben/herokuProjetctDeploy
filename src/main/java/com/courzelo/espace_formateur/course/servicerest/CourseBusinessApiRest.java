@@ -50,8 +50,6 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 		@Override
 		public CourseDTO getCourseById(String  idCourse) {
 			  Course course = reposCourse.findById(idCourse).orElseGet(Course::new);
-			
-			
 			return mapper.map(course,CourseDTO.class);
 		}
 		@Override
@@ -81,13 +79,9 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			thecourse.setSkillsRequired(course.getSkillsRequired());
 			
 			//introduction part
-			intrConcluExtremCourse intro=new intrConcluExtremCourse();
 			
-			intro.setName(courseDTO.getIntroduction().getName());
 			
-			intro.setPhases(courseDTO.getIntroduction().getPhases());
-			
-				thecourse.setIntroduction(intro);
+				thecourse.setIntroduction(course.getIntroduction());
 				
 			//section part
 			if(courseDTO.getSections()!= null)
@@ -96,12 +90,8 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			if(courseDTO.getCustomerSections()!= null)
 				thecourse.setCustomerSections(course.getCustomerSections());
 			//conclusion part
-			intrConcluExtremCourse conclu=new intrConcluExtremCourse();
-			
-				conclu.setName(courseDTO.getConclusion().getName());
-				conclu.setPhases(courseDTO.getConclusion().getPhases());
-			
-				thecourse.setConclusion(conclu);
+		
+				thecourse.setConclusion(course.getConclusion());
 			
 			if(courseDTO.getAudience()!= null)
 				thecourse.setAudience(course.getAudience());
