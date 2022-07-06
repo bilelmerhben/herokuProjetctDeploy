@@ -79,14 +79,16 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			
 			if(courseDTO.getSkillsRequired()!= null)
 			thecourse.setSkillsRequired(course.getSkillsRequired());
+			
 			//introduction part
 			intrConcluExtremCourse intro=new intrConcluExtremCourse();
-			if(courseDTO.getIntroduction().getName()!= null)
-				intro.setName(courseDTO.getIntroduction().getName());
-			if(courseDTO.getIntroduction().getPhases()!= null)
+			
+			intro.setName(courseDTO.getIntroduction().getName());
+			
 			intro.setPhases(courseDTO.getIntroduction().getPhases());
 			
 				thecourse.setIntroduction(intro);
+				
 			//section part
 			if(courseDTO.getSections()!= null)
 				thecourse.setSections(course.getSections());
@@ -95,9 +97,8 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 				thecourse.setCustomerSections(course.getCustomerSections());
 			//conclusion part
 			intrConcluExtremCourse conclu=new intrConcluExtremCourse();
-			if(courseDTO.getConclusion().getName()!= null)
+			
 				conclu.setName(courseDTO.getConclusion().getName());
-			if(courseDTO.getConclusion().getPhases()!= null)
 				conclu.setPhases(courseDTO.getConclusion().getPhases());
 			
 				thecourse.setConclusion(conclu);
