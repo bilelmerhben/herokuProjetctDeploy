@@ -1,6 +1,7 @@
 package com.courzelo.espace_formateur.course.entities.dtos;
 
 import java.util.List;
+
 import com.courzelo.espace_formateur.course.entities.CustomerExtremCourse;
 import com.courzelo.espace_formateur.course.entities.ExtremCourse;
 import com.courzelo.espace_formateur.course.entities.Outcome;
