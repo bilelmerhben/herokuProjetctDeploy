@@ -32,7 +32,7 @@ public class Course {
 	private String category;  
 	
 	@Field(value = "Outcomes")
-	private List<String> outcomes;
+	private List<Outcome> outcomes;
 	
 	@Field(value = "ShortDescription")
 	private String description;
