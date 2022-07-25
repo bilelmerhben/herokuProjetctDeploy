@@ -8,4 +8,5 @@ import lombok.Setter;
 public class CustomerExtremCourse {
 	 private String name;
 	 private List<CustomerPhase> phases;
+	 private String quizzId;
 }

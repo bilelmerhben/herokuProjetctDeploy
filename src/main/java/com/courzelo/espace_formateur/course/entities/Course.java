@@ -1,6 +1,7 @@
 package com.courzelo.espace_formateur.course.entities;
 
 
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -86,6 +87,21 @@ public class Course {
     @Field(value = "Required Score")
    	private int score;
     
-    @Field(value = "With methodologie type")
-   	private boolean type;
+    @Field(value = "With methodologie ")
+   	private boolean courseType;
+    
+    @Field (value ="Study Type")
+    private boolean online;
+    
+    @Field (value ="Individuel")
+    private boolean individuel;
+    
+    @Field (value ="Free")
+    private boolean free;
+    
+    @Field (value ="duration")
+    private String duration;
+    
+    
+    
 }

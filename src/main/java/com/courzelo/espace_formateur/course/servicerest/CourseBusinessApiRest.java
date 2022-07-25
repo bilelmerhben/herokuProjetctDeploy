@@ -10,7 +10,6 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import com.courzelo.espace_formateur.course.entities.Course;
 import com.courzelo.espace_formateur.course.entities.User;
-import com.courzelo.espace_formateur.course.entities.intrConcluExtremCourse;
 import com.courzelo.espace_formateur.course.entities.dtos.CourseDTO;
 import com.courzelo.espace_formateur.course.iservicerest.IServiceCourse;
 import com.courzelo.espace_formateur.course.repositories.CourseRepository;
@@ -117,7 +116,11 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			if(courseDTO.getStatus()!= null)
 				thecourse.setStatus(course.getStatus());
 			
-			Course newCourse = reposCourse.save(thecourse);
+			if(courseDTO.getScore()!= 0)		
+				thecourse.setScore(course.getScore());
+			
+			
+				Course newCourse = reposCourse.save(thecourse);
 			return  mapper.map(newCourse, CourseDTO.class);
 		}
 		@Override
