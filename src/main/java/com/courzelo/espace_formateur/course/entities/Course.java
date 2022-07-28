@@ -97,8 +97,11 @@ public class Course {
     @Field (value ="Free")
     private boolean free;
     
-    @Field (value ="Due Subscription Date")
-    private String duration;
+    @Field (value ="Start Date")
+    private String startDate;
+    
+    @Field (value ="End Date")
+    private String endDate;
     
     @Field (value ="Numbers of Attendee")
     private int nbrAttendee;

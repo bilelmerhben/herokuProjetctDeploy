@@ -119,6 +119,21 @@ public class CourseBusinessApiRest  implements IServiceCourse{
 			if(courseDTO.getScore()!= 0)		
 				thecourse.setScore(course.getScore());
 			
+				thecourse.setType(course.isType());
+				
+			if(courseDTO.getStudyType()!= null)		
+				thecourse.setStudyType(course.getStudyType());
+				
+				thecourse.setStructure(course.getStructure());
+				thecourse.setFree(course.isFree());
+				
+			if(courseDTO.getStartDate()!= null)		
+				thecourse.setStartDate(course.getStartDate());
+			if(courseDTO.getEndDate()!= null)		
+				thecourse.setEndDate(course.getEndDate());
+			if(courseDTO.getNbrAttendee() != 0)		
+				thecourse.setNbrAttendee(course.getNbrAttendee());
+				thecourse.setAcceptClassroom(course.isAcceptClassroom());
 			
 				Course newCourse = reposCourse.save(thecourse);
 			return  mapper.map(newCourse, CourseDTO.class);

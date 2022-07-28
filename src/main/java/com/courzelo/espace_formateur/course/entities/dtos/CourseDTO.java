@@ -1,6 +1,9 @@
 package com.courzelo.espace_formateur.course.entities.dtos;
 
 import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import com.courzelo.espace_formateur.course.entities.CustomerExtremCourse;
 import com.courzelo.espace_formateur.course.entities.ExtremCourse;
 import com.courzelo.espace_formateur.course.entities.Outcome;
@@ -39,7 +42,8 @@ public class CourseDTO {
 	private String studyType;
 	private String structure;
     private boolean free;
-    private String duration;
+    private String startDate;
+    private String endDate;
     private int nbrAttendee;
     private boolean acceptClassroom;
 }
